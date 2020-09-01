@@ -1,0 +1,8 @@
+https://www.nytimes.com/,NewYorkTimes(U.S.)
+https://jp.wsj.com/,WallStreetJournal(U.S.)
+https://www.ft.com/,FinancialTimes(England)
+https://www.bbc.com/,BBC(England)
+https://www.haaretz.com/,Haaretz(Israel)
+http://www.chosunonline.com/,’©‘N“ú•ñ(ŠØ‘)
+http://naenara.com.kp/main/index/ja/first,ƒlƒiƒ‰(–k’©‘N)
+https://parstoday.com/ja,ParsToday(ƒCƒ‰ƒ“)

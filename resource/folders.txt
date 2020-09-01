@@ -1,0 +1,5 @@
+C:\Users\kosuk\Documents\00_myfolder\00_Program,Program
+C:\Users\kosuk\Documents\00_myfolder\01_Money,Money
+C:\Users\kosuk\Documents\00_myfolder\02_Study,Study
+C:\Users\kosuk\Documents\00_myfolder\01_Money\03_URI,URI
+https://drive.google.com/drive/my-drive,GoogleDrive

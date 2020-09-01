@@ -1,0 +1,121 @@
+window.resizeTo(1300,750);
+
+var fso = new ActiveXObject("Scripting.FileSystemObject");
+var shell = new ActiveXObject("WScript.Shell");
+var appUri = fso.GetParentFolderName(location.href);
+var appPath = appUri.substr("file:///".length).split("/").join("\\");
+appPath += "\\";
+
+
+// window 閉じるときに object 解放
+window.onload = function() {
+  window.onbeforeunload = function() {
+    fso = null;
+    shell = null;
+  }
+}
+
+readText(appPath + "resource\\folders.txt","folders");
+readText(appPath + "resource\\files.txt","files");
+readText(appPath + "resource\\web-links.txt","web-links");
+readText(appPath + "resource\\reference.txt","reference");
+readText(appPath + "resource\\tools.txt","tools");
+readWord(appPath + "resource\\word.txt","word-btn");
+
+
+// txtから 一文読み取り、カンマで区切り配列にする
+// [0]をhrefに　[1]を題名にする
+
+// Pathとタイトルを読み取るFunction #######################################
+function readText(path,id) {
+  // 読み取り専用、ASCIIで開く
+  var file = fso.OpenTextFile(path,1,true,0);
+  var html = "";
+
+
+  while(!file.AtEndOfStream) {
+    var arr = file.ReadLine().split(",");
+    var escapeStr = stringEscape(arr[0]);
+
+    var params = {
+      "path" : escapeStr,
+      "title" : arr[1]
+    };
+
+    var s = "<li><span style='cursor: pointer;' onclick='exec({path})'>"
+             + "{title}</span></li>";
+    
+    for(var key in params) {
+      s = s.split("{" + key + "}").join(params[key]);
+    }
+
+    html += s;
+  }
+  file.Close();
+  document.getElementById(id).innerHTML = html;
+}
+
+
+// wordを追加するFunction #########################################
+function readWord(path,id) {
+  // 読み取り専用、ASCIIで開く
+  var file = fso.OpenTextFile(path,1,true,0);
+  var html = "";
+
+
+  while(!file.AtEndOfStream) {
+    var arr = file.ReadLine().split(",");
+    var params = {
+      "sentence" : arr[0],
+      "title" : arr[1]
+    };
+
+    var s = '<li><span word={sentence} class="words">{title}</span></li>'
+    for(var key in params){
+      s = s.split("{" + key + "}").join(params[key]);
+    }
+
+    html += s;
+  }
+  file.Close();
+
+  document.getElementById(id).innerHTML = html;
+  addWordEvents();
+
+}
+
+// word-btn にonclick event を追加する ###############################
+function addWordEvents() {
+  var wordBtns = document.getElementsByClassName('words');
+
+  for(var i=0; i<wordBtns.length; i++) {
+    wordBtns[i].addEventListener("click",function(e) {
+      var textarea = document.getElementById('mytext');
+      var text = textarea.value;
+
+      if(text === "") {
+        text += e.target.getAttribute("word");
+        textarea.value = text;
+      } else {
+        text += '\n' + e.target.getAttribute("word");
+        textarea.value = text;
+      }
+
+    });
+  }
+}
+
+function stringEscape(str) {
+    //var s = obj.value;
+    var repWord =  str.replace(/\\/g,'\\\\');
+    var wordWrap = "\"" + repWord + "\"";
+    return wordWrap;
+}
+
+
+
+// a をクリックしたら hrefから読み取ったパスを exec するfunction を作る
+function exec(path) {
+  var execPath = "\"" + path + "\"";
+  shell.Run(execPath);
+}

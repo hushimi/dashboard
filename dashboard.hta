@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DashBoard</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="./CSS/style.css">
+<link rel="stylesheet" href="./CSS/reset.css">
+<link rel="stylesheet" href="./CSS/calendar.css">
+<hta:application applicationname="Neo" singleinstance="yes" showintaskbar="no" caption="no" border="none" innerborder="no" navigable="yes">
+</head>
+
+<body>
+<div id="container">
+
+
+  <div id="side-bar">
+
+    <div id="clock-box">
+      <canvas id="clockCanvas" width="225px" height="225px"></canvas>
+    </div>
+    
+      <div id="daily-task"><ul id="tools"></ul></div>
+  </div>
+
+  <div id="content">
+    <div class="link-area">
+
+
+      <div class="upper">
+
+        <div class="left-wrap">
+          <p>FOLDERS</p>
+          <div class="box">
+            <ul id="folders"></ul>
+          </div>
+        </div>
+
+        <div class="right-wrap">
+           <p>FILES</p>
+           <div class="box">
+             <ul id="files"></ul>
+           </div>
+        </div>
+
+      </div>
+
+      <div class="under">
+
+        <div class="left-wrap">
+          <p>WEB-LINKS</p>
+           <div class="box">
+             <ul id="web-links"></ul>
+           </div>
+        </div>
+
+        <div class="right-wrap">
+           <p>REFERENCE</p>
+           <div class="box">
+             <ul id="reference"></ul>
+           </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="right-box">
+      <div class="upper">
+        <div id="calendar-box"></div>
+        <div class="tool-wrapper">
+          <div class="btn-box"><ul id="time-btn"></ul></div>
+          <div class="btn-box"><ul id="word-btn"></ul></div>
+        </div>
+      </div>
+
+      <div class="under">
+        <div class="text-wrap">
+          <textarea name="memo" rows="12" cols="40" id="mytext"></textarea>
+          <div id="reset-btn" class="text-btn">RESET</div>
+          <div id="copy-btn" class="text-btn">COPY</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<script src="./JS/clock.js"></script>
+<script src="./JS/app.jse"></script>
+<script src="./JS/calendar.js"></script>
+</body>

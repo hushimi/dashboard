@@ -1,0 +1,9 @@
+https://www.nhk.or.jp/news/,NHKオンライン
+https://www.yahoo.co.jp/,YahooNews
+https://toyokeizai.net/,東洋経済
+https://business.nikkei.com/,日経ビジネスオンライン
+https://www.huffingtonpost.jp/,ハフィントンポスト
+https://www.mofa.go.jp/mofaj/annai/honsho/gaisho/motegi/index.html,外務省
+https://www.mod.go.jp/,防衛省
+https://www.nier.go.jp/kaihatsu/setsumeikai/r01setsumeikai/index.html,国立教育政策研究所
+https://www.boj.or.jp/,日銀
