@@ -1,6 +1,1 @@
-C:\Users\kosuk\Documents\00_myfolder\00_Program\07_hta_tool\DashBoard,DASHBOARD
-C:\Users\kosuk\Documents\00_myfolder\00_Program\04_Powershell\XKEYCHASER\,XKEYCHASER
-https://trello.com/0xf3/boards,Trello
-C:\Users\kosuk\Documents\00_myfolder\00_Program\02_TTL\ConnectRasPi.ttl,RaspberryPi
-https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2,AWS
-https://www.insecam.org/,Insecam
+
